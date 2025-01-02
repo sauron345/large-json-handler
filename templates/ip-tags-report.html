@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Table</title>
+    <link href="{% static 'styles/custom.css' %}" type="text/css" rel="stylesheet">
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Adres IP</th>
+            <th>Pasujące tagi</th>
+        </tr>
+        <tr>
+            <td rowspan="{{ tags|length }}">{{ ip }}</td>
+            <td>{{ tags.0 }}</td>
+        </tr>
+        {% for tag in tags|slice:"1:" %}
+            <tr>
+                <td>{{ tag }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
