@@ -1,35 +1,32 @@
 import ijson
 import ipaddress
 
-
-class SingletonMeta(type):
-
-    _instances = {}
-
-    def __call__(cls, *args, **kwargs):
-        if cls not in cls._instances:
-            instance = super().__call__(*args, **kwargs)
-            cls._instances[cls] = instance
-        return cls._instances[cls]
+from tags_request_handlers.singleton_meta import SingletonMeta
 
 
 class KnowledgeBaseHandler(metaclass=SingletonMeta):
 
-    _STORAGE_PATH = 'knowledge_base.json'
+    _FILE_PATH = 'knowledge_base.json'
 
-    def get_tags_by(self, ip):
-        uniq_ip_tags = set()
+    _uniq_ip_tags = set()
+    _file_obj = None
+    _ip_obj = None
 
-        ip_obj = ipaddress.IPv4Address(ip)
+    def get_sorted_tags_by(self, ip):
+        self._init_state(ip)
+        self._find_ip_tags()
+        self._file_obj.close()
+        ip_tags_list = list(self._uniq_ip_tags)
+        return sorted(ip_tags_list)
 
-        ips_tags_sorted_file = open(self._STORAGE_PATH, 'rb')
+    def _init_state(self, ip):
+        self._uniq_ip_tags = set()
+        self._ip_obj = ipaddress.IPv4Address(ip)
+        self._file_obj = open(self._FILE_PATH, 'rb')
 
-        for item in ijson.items(ips_tags_sorted_file, 'item'):
+    def _find_ip_tags(self):
+        for item in ijson.items(self._file_obj, 'item'):
             net_obj = ipaddress.IPv4Network(item['ip_network'], strict=False)
 
-            if ip_obj in net_obj:
-                uniq_ip_tags.add(item['tag'])
-
-        ips_tags_sorted_file.close()
-
-        return sorted(list(uniq_ip_tags))
+            if self._ip_obj in net_obj:
+                self._uniq_ip_tags.add(item['tag'])
