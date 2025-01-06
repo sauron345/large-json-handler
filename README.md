@@ -21,7 +21,7 @@ Usługa dostępna jest pod URI: http://localhost:8080/
 
 ## Baza wiedzy
 
-Została stworzona w głównym katalogu projektu `recruitment_task_nask` w pliku `knowledge_base.json`
+Została stworzona w katalogu projektu `recruitment_task_nask/recruitment_task_nask` w pliku `knowledge_base.json`
 
 ## Obsługa błędnie przekazanego ip
 
@@ -31,6 +31,8 @@ to program zwróci wartość w postaci JSONa:
 `{'error': 'Invalid ip structure'}`
 
 ## Testy jednostkowe
+
+Znajdują się w pliku `tags_requests_handlers/test.py`.
 
 Zostały stworzone, aby przetestować:
 

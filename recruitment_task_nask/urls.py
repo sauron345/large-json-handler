@@ -16,6 +16,13 @@ Including another URLconf
 """
 from django.urls import path, include
 
+from recruitment_task_nask.errors_handler import error_handler
+
 urlpatterns = [
     path('', include('tags_requests_handlers.urls')),
 ]
+
+handler404 = error_handler.page_not_found
+handler500 = error_handler.internal_server
+handler403 = error_handler.forbidden
+handler400 = error_handler.bad_request

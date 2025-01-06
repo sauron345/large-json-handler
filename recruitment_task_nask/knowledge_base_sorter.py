@@ -4,10 +4,11 @@ import ijson
 
 from django.conf import settings
 
+
 class KnowledgeBaseHandlerSorter:
 
-    _DEFAULT_STORAGE_PATH = settings.BASE_DIR / 'knowledge_base.json'
-    _DEFAULT_SORTED_STORAGE_PATH = settings.BASE_DIR / 'sorted_knowledge_base.json'
+    _DEFAULT_STORAGE_PATH = settings.BASE_DIR / 'recruitment_task_nask/knowledge_base.json'
+    _DEFAULT_SORTED_STORAGE_PATH = settings.BASE_DIR / 'recruitment_task_nask/sorted_knowledge_base.json'
     _MAX_IP_NET_TAGS = 10
 
     _sorted_ip_nets = ''
