@@ -2,10 +2,11 @@ import re
 
 
 class IpAddressValidator:
+
     _MIN_OCTET_NUM = 0
     _MAX_OCTET_NUM = 255
 
-    _IP_PATTERN = r"(\d{1,3}.){3}\d{1,3}"
+    _IP_PATTERN = r"(\d{1,3}\.){3}\d{1,3}"
 
     def __init__(self, ip):
         self._ip = ip

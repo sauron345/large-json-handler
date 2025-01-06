@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 
-from tags_request_handlers.singleton_meta import SingletonMeta
+from tags_requests_handlers.singleton_meta import SingletonMeta
 
 
 class ErrorHandler(View, metaclass=SingletonMeta):
@@ -35,3 +35,6 @@ class ErrorHandler(View, metaclass=SingletonMeta):
             self._TEMPLATE_NAME,
             {'message': '400 - Bad request', 'title': 'Bad Request'}
         )
+
+
+error_handler = ErrorHandler()

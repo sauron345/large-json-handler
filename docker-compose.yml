@@ -1,0 +1,27 @@
+services:
+  web:
+    build:
+      context: .
+    container_name: django_web
+    command: gunicorn --bind 0.0.0.0:8000 recruitment_task_nask.wsgi:application
+    volumes:
+      - static_volume:/recruitment_task_nask/staticfiles/
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./.env
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx_server
+    ports:
+      - "80:80"
+    volumes:
+      - static_volume:/recruitment_task_nask/staticfiles/
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - web
+
+
+volumes:
+  static_volume:

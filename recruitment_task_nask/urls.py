@@ -17,5 +17,5 @@ Including another URLconf
 from django.urls import path, include
 
 urlpatterns = [
-    path('', include('tags_request_handlers.urls')),
+    path('', include('tags_requests_handlers.urls')),
 ]

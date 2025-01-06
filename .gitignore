@@ -1,46 +1,14 @@
-# Byte-compiled Python files
-*.pyc
-*.pyo
+# byte-compiled python files
 __pycache__/
 
-# Django-specific files
-db.sqlite3  # Ignore SQLite database file (if used for development)
-*.sqlite3
+# env variables file
+.env
 
-# Django migrations
-**/migrations/*.py
-!**/migrations/__init__.py
-
-# Environment variables and secrets
-.env  # For environment files (e.g., containing sensitive settings)
-
-# Virtual environment
-venv/
+# virtual environment
 env/
 
-# Static and media files
+# production static files
 staticfiles/
-media/
-
-# Logs and debug output
-*.log
-logs/
 
 # IDE
 .idea/
-
-# OS-generated files
-.DS_Store  # macOS
-Thumbs.db  # Windows
-
-# Coverage reports
-htmlcov/
-.coverage
-*.cover
-*.coverage.*
-
-# Test and pytest cache
-.tox/
-.pytest_cache/
-nosetests.xml
-coverage.xml
