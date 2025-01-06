@@ -9,10 +9,10 @@ cd C:\Users\User\Desktop\recruitment_task_nask
 
 gdzie `recruitment_task_nask` jest katalogiem głównym projektu.
 
-* Następnie wymagane jest uruchomienie serwera produkcyjnego, którym jest Docker:
+* Następnie wymagane jest zbudowanie obrazów oraz uruchomienie serwera produkcyjnego, którym jest Docker:
 
 ```commandline
-docker compose up
+docker-compose up --build
 ```
 
 ## Dostępność usługi
