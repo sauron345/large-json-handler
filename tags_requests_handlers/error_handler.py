@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 
-from tags_requests_handlers.singleton_meta import SingletonMeta
+from singleton_meta import SingletonMeta
 
 
 class ErrorHandler(View, metaclass=SingletonMeta):

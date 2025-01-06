@@ -1,14 +1,19 @@
-from tags_requests_handlers.knowledge_base_handler import KnowledgeBaseHandler
+from recruitment_task_nask.knowledge_base_sorted_handler import KnowledgeBaseSortedHandler
+from recruitment_task_nask.knowledge_base_sorter import KnowledgeBaseHandlerSorter
 
-knowledge_base_handler = None
+knowledge_base_sorted_handler = None
 
 
 def open_knowledge_base():
-    global knowledge_base_handler
-    knowledge_base_handler = KnowledgeBaseHandler()
-    knowledge_base_handler.open()
+    global knowledge_base_sorted_handler
+
+    knowledge_base_handler_sorter = KnowledgeBaseHandlerSorter()
+    knowledge_base_handler_sorter.execute()
+
+    knowledge_base_sorted_handler = KnowledgeBaseSortedHandler()
+    knowledge_base_sorted_handler.open()
 
 
 def close_knowledge_base():
-    if knowledge_base_handler and not knowledge_base_handler.is_closed():
-        knowledge_base_handler.close()
+    if knowledge_base_sorted_handler and not knowledge_base_sorted_handler.is_closed():
+        knowledge_base_sorted_handler.close()

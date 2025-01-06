@@ -1,7 +1,8 @@
 from django.test import TestCase
 from django.conf import settings
 
-from tags_requests_handlers.knowledge_base_handler import KnowledgeBaseHandler
+from recruitment_task_nask.knowledge_base_sorted_handler import KnowledgeBaseSortedHandler
+from recruitment_task_nask.knowledge_base_sorter import KnowledgeBaseHandlerSorter
 from tags_requests_handlers.test_resources import expected_results, ips_with_tags, ips_without_tags, invalid_ips
 
 
@@ -12,8 +13,14 @@ class TestKnowledgeBaseHandler(TestCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
+
         storage_path = settings.BASE_DIR / 'tags_requests_handlers/simple_knowledge_base.json'
-        cls._knowledge_base_handler = KnowledgeBaseHandler(storage_path)
+        sorted_storage_path = settings.BASE_DIR / 'tags_requests_handlers/sorted_simple_knowledge_base.json'
+
+        knowledge_base_sorter = KnowledgeBaseHandlerSorter(storage_path, sorted_storage_path)
+        knowledge_base_sorter.execute()
+
+        cls._knowledge_base_handler = KnowledgeBaseSortedHandler(sorted_storage_path)
         cls._knowledge_base_handler.open()
 
     def test_ips_with_tags(self):
