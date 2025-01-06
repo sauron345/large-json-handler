@@ -1,3 +1,5 @@
+import time
+
 from django.test import TestCase
 from django.conf import settings
 
@@ -9,6 +11,7 @@ from tags_requests_handlers.test_resources import expected_results, ips_with_tag
 class TestKnowledgeBaseHandler(TestCase):
 
     _knowledge_base_handler = None
+    _start = None
 
     @classmethod
     def setUpClass(cls):
@@ -22,6 +25,8 @@ class TestKnowledgeBaseHandler(TestCase):
 
         cls._knowledge_base_handler = KnowledgeBaseSortedHandler(sorted_storage_path)
         cls._knowledge_base_handler.open()
+
+        cls._start = time.time()
 
     def test_ips_with_tags(self):
         for ip in ips_with_tags:
@@ -40,5 +45,6 @@ class TestKnowledgeBaseHandler(TestCase):
 
     @classmethod
     def tearDownClass(cls):
+        print(f"\n\nTesting time: {time.time() - cls._start:.4f} seconds\n")
         cls._knowledge_base_handler.close()
         super().tearDownClass()
