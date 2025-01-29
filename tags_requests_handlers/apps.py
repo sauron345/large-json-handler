@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
-from recruitment_task_nask.startup import open_knowledge_base
+from large_json_handler.startup import open_knowledge_base
 
 
 class RequestsTagsHandlersConfig(AppConfig):

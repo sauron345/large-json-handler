@@ -3,7 +3,7 @@ services:
     build:
       context: .
     container_name: django_web
-    command: gunicorn --bind 0.0.0.0:8000 recruitment_task_nask.wsgi:application
+    command: gunicorn --bind 0.0.0.0:8000 large_json_handler.wsgi:application
     volumes:
       - static_volume:/app/staticfiles/
     ports:

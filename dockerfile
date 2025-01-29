@@ -25,4 +25,4 @@ COPY . /app/
 RUN python manage.py collectstatic --noinput
 
 # launching gunicorn server
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "recruitment_task_nask.wsgi:application"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "large_json_handler.wsgi:application"]

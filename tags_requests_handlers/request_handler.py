@@ -2,7 +2,7 @@ from django.views import View
 
 from abc import ABC, abstractmethod
 
-from recruitment_task_nask.startup import knowledge_base_sorted_handler
+from large_json_handler.startup import knowledge_base_sorted_handler
 
 
 class RequestHandler(View, ABC):

@@ -7,7 +7,7 @@ from django.conf import settings
 
 class KnowledgeBaseSortedHandler:
 
-    _DEFAULT_STORAGE_PATH = settings.BASE_DIR / 'recruitment_task_nask/sorted_knowledge_base.json'
+    _DEFAULT_STORAGE_PATH = settings.BASE_DIR / 'large_json_handler/sorted_knowledge_base.json'
 
     _uniq_ip_tags = set()
     _file_obj = None

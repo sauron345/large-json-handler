@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 
-from recruitment_task_nask.singleton_meta import SingletonMeta
+from large_json_handler.singleton_meta import SingletonMeta
 
 
 class ErrorsHandler(View, metaclass=SingletonMeta):

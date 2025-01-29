@@ -1,5 +1,5 @@
-from recruitment_task_nask.knowledge_base_sorted_handler import KnowledgeBaseSortedHandler
-from recruitment_task_nask.knowledge_base_sorter import KnowledgeBaseHandlerSorter
+from large_json_handler.knowledge_base_sorted_handler import KnowledgeBaseSortedHandler
+from large_json_handler.knowledge_base_sorter import KnowledgeBaseHandlerSorter
 
 knowledge_base_sorted_handler = None
 

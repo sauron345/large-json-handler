@@ -4,15 +4,15 @@
 Załóżmy, że repozytorium znajduje się w katalogu podanym poniżej:
 
 ```commandline
-cd C:\Users\User\Desktop\recruitment_task_nask
+cd C:\Users\User\Desktop\large_json_handler
 ```
 
-gdzie `recruitment_task_nask` jest katalogiem głównym projektu.
+gdzie `large_json_handler` jest katalogiem głównym projektu.
 
-* Następnie wymagane jest zbudowanie obrazów oraz uruchomienie serwera produkcyjnego, którym jest Docker:
+* Następnie wymagane jest uruchomienie serwera produkcyjnego, którym jest Docker:
 
 ```commandline
-docker-compose up --build
+docker-compose up
 ```
 
 ## Dostępność usługi
@@ -21,7 +21,7 @@ Usługa dostępna jest pod URI: http://localhost:8080/
 
 ## Baza wiedzy
 
-Została stworzona w katalogu projektu `recruitment_task_nask/recruitment_task_nask` w pliku `knowledge_base.json`
+Została stworzona w katalogu projektu `large_json_handler/large_json_handler` w pliku `knowledge_base.json`
 
 ## Obsługa błędnie przekazanego ip
 

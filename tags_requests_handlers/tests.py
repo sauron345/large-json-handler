@@ -3,8 +3,8 @@ import time
 from django.test import TestCase
 from django.conf import settings
 
-from recruitment_task_nask.knowledge_base_sorted_handler import KnowledgeBaseSortedHandler
-from recruitment_task_nask.knowledge_base_sorter import KnowledgeBaseHandlerSorter
+from large_json_handler.knowledge_base_sorted_handler import KnowledgeBaseSortedHandler
+from large_json_handler.knowledge_base_sorter import KnowledgeBaseHandlerSorter
 from tags_requests_handlers.test_resources import expected_results, ips_with_tags, ips_without_tags, invalid_ips
 
 

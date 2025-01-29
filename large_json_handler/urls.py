@@ -1,5 +1,5 @@
 """
-URL configuration for recruitment_task_nask project.
+URL configuration for large_json_handler project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.1/topics/http/urls/
@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.urls import path, include
 
-from recruitment_task_nask.errors_handler import error_handler
+from large_json_handler.errors_handler import error_handler
 
 urlpatterns = [
     path('', include('tags_requests_handlers.urls')),

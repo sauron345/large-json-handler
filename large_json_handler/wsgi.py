@@ -1,5 +1,5 @@
 """
-WSGI config for recruitment_task_nask project.
+WSGI config for large_json_handler project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -14,7 +14,7 @@ import atexit
 
 from .startup import close_knowledge_base
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'recruitment_task_nask.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'large_json_handler.settings')
 
 application = get_wsgi_application()
 
